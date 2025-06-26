@@ -1,2 +1,6 @@
-# ignore virtualenvs
+# Ignorar ambientes virtuais
 backend/.venv/
+frontend/.venv/
+
+# Ignorar arquivos de ambiente
+**/.env
