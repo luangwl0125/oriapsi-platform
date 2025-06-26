@@ -1,0 +1,130 @@
+oriapsi-platform/
+├── frontend/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Feature.jsx
+│   │   └── Footer.jsx
+│   ├── pages/
+│   │   ├── _app.jsx
+│   │   └── index.jsx
+│   ├── public/            ← assets estáticos (logos, ícones etc.)
+│   ├── styles/
+│   │   └── globals.css
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── postcss.config.js
+└── backend/ …  
+
+# backend/
+# ├── app/
+# │   ├── main.py
+# │   ├── core/
+# │   │   └── config.py
+# │   ├── db/
+# │   │   ├── base.py
+# │   │   └── session.py
+# │   ├── models/
+# │   │   └── patient.py
+# │   ├── schemas/
+# │   │   └── patient.py
+# │   ├── crud/
+# │   │   └── patient.py
+# │   ├── api/
+# │   │   ├── deps.py
+# │   │   └── patients.py
+# │   └── stripe_webhook.py
+# ├── .env.example
+# ├── requirements.txt
+# ├── Dockerfile
+# └── README.md
+
+
+# CRIAR AMBIENTE VIRTUAL
+
+py -3.11 -m venv .venv
+
+-----------------------------------
+
+# ATIVAR AMBIENTE VIRTUAL
+
+.\.venv\Scripts\Activate.ps1
+
+------------------------------------
+
+# INSTALAR PIP 25.1.1
+
+python.exe -m pip install --upgrade pip
+
+------------------------------------
+
+# INSTALAR OU DESINSTALAR REQUIREMENTS
+
+pip install -r requirements.txt
+
+pip uninstall -r requirements.txt
+
+---------------------------------------
+
+# INSTALAR PYAUDIO SEPARADAMENTE
+
+pip install pipwin
+
+pipwin install pyaudio
+
+pip install pyaudio
+
+----------------------------------------
+
+# DESATIVAR AMBIENTE VIRTUAL
+
+deactivate
+
+----------------------------------------
+
+# LISTAR AS VERSÕES DO PYTHON
+
+py -0p
+
+----------------------------------------
+
+# CONFIRMAR VERSÃO PYTHON
+
+python --version
+
+--------------------------------------
+
+# RODAR CÓDIGO
+
+python -------.py
+
+--------------------------------------
+
+LISTAR PACOTES INSTALADOS
+
+pip list
+
+--------------------------------------
+
+PACOTE==VERSÃO
+
+pip freeze
+
+--------------------------------------
+
+ GERAR REQUIREMENTS.TXT requirements.txt
+
+ pip freeze > requirements.txt
+
+--------------------------------------
+
+PACOTES COM VERSÕES DESATUALIZADAS
+
+pip list --outdated
+
+--------------------------------------
+EXIBE EM JSON
+
+pip list --outdated --format=json
+
+--------------------------------------

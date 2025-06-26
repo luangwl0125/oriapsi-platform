@@ -1,0 +1,186 @@
+// package.json
+{
+    "name": "oriapsi-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "next": "^13.0.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "tailwindcss": "^3.0.0",
+        "autoprefixer": "^10.0.0",
+        "postcss": "^8.0.0"
+    }
+}
+// tailwind.config.js
+  module.exports = {
+    content: [
+        "./pages/**/*.{js,jsx}",
+        "./components/**/*.{js,jsx}"
+    ],
+    theme: {
+      extend: {
+        colors: {
+          auroraBlue: '#4A6FA5',
+          softGold: '#E8C36B',
+          mineralGray: '#7D8C9C',
+          sereneWhite: '#FAFAFA'
+            },
+        fontFamily: {
+          title: ['Poppins', 'sans-serif'
+                ],
+          body: ['Open Sans', 'Inter', 'sans-serif'
+                ]
+            }
+        }
+    },
+    plugins: []
+};
+  
+  // postcss.config.js
+  module.exports = {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+};
+  
+  // pages/_app.jsx
+  import '../styles/globals.css';
+  import Head from 'next/head';
+  
+  export default function App({ Component, pageProps
+}) {
+    return (
+      <>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Oriapsi — Clareza, ética e inteligência para sua prática psicológica</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+        </Head>
+        <Component {...pageProps
+    } />
+      </>
+    );
+}
+// pages/index.jsx
+  import Navbar from '../components/Navbar';
+  import Hero from '../components/Hero';
+  import Feature from '../components/Feature';
+  import Footer from '../components/Footer';
+  
+  export default function Home() {
+    return (
+      <div className="bg-sereneWhite text-mineralGray font-body">
+        <Navbar />
+        <Hero />
+  
+        <section className="max-w-4xl mx-auto py-16 px-4">
+          <h2 className="text-3xl font-title text-auroraBlue mb-8">Núcleo Clínico e Organizacional</h2>
+          <Feature
+            title="Oriapsi Dashboard"
+            text="Painel principal do psicólogo com agenda, pacientes, gravações, documentos e IA integrada."
+          />
+          <Feature
+            title="Gerenciador de Pacientes"
+            text="Pastas, histórico de atendimentos e dados clínicos de forma segura e estruturada."
+          />
+          <Feature
+            title="Agenda"
+            text="Compromissos clínicos, reuniões e lembretes integrados ao Google Calendar."
+          />
+        </section>
+  
+        <section className="bg-auroraBlue text-sereneWhite py-16">
+          <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl font-title mb-8">Comunicação, Registro e Documentação</h2>
+            <Feature
+              title="Transcribe"
+              text="Gravação e transcrição automática com geração de resumos temáticos."
+            />
+            <Feature
+              title="Docs"
+              text="Modelos de laudos, relatórios e atestados conforme CFP e LGPD."
+            />
+            <Feature
+              title="Flow"
+              text="Sugestões de técnicas, planejamento terapêutico e insights de progresso."
+            />
+          </div>
+        </section>
+  
+        <section className="max-w-4xl mx-auto py-16 px-4">
+          <h2 className="text-3xl font-title text-auroraBlue mb-8">Educação e Teste Gratuito</h2>
+          <div className="space-y-4">
+            <p>Curso: <strong>O Psicólogo do Futuro</strong> — IA aplicada à prática clínica.</p>
+            <button className="px-6 py-3 bg-softGold text-mineralGray font-title rounded-lg hover:bg-gold-600">
+              Teste Grátis Agora
+            </button>
+          </div>
+        </section>
+  
+        <Footer />
+      </div>
+    );
+}
+// components/Navbar.jsx
+  export default function Navbar() {
+    return (
+      <nav className="flex items-center justify-between py-6 px-4 max-w-6xl mx-auto">
+        <div className="text-2xl font-title text-auroraBlue">Oriapsi</div>
+        <ul className="flex space-x-6 font-body">
+          <li><a href="#dashboard" className="hover:text-auroraBlue">Dashboard</a></li>
+          <li><a href="#agenda" className="hover:text-auroraBlue">Agenda</a></li>
+          <li><a href="#transcribe" className="hover:text-auroraBlue">Transcribe</a></li>
+          <li><a href="#docs" className="hover:text-auroraBlue">Docs</a></li>
+        </ul>
+      </nav>
+    );
+}
+// components/Hero.jsx
+  export default function Hero() {
+    return (
+      <section className="flex flex-col items-center justify-center text-center py-20 bg-sereneWhite">
+        <h1 className="text-5xl font-title text-auroraBlue mb-4">Luz para a mente. Ferramentas para a prática.</h1>
+        <p className="max-w-xl mb-8">Transforme sua rotina clínica com inteligência, clareza e ética.</p>
+        <button className="px-8 py-4 bg-auroraBlue text-sereneWhite font-title rounded-lg hover:bg-blue-700">
+          Começar Agora
+        </button>
+      </section>
+    );
+}
+// components/Feature.jsx
+  export default function Feature({ title, text
+}) {
+    return (
+      <div className="mb-6">
+        <h3 className="text-2xl font-title mb-2">{title
+    }</h3>
+        <p>{text
+    }</p>
+      </div>
+    );
+}
+// components/Footer.jsx
+  export default function Footer() {
+    return (
+      <footer className="py-8 bg-mineralGray text-sereneWhite text-center">
+        <p>&copy; {new Date().getFullYear()
+    } Oriapsi. Todos os direitos reservados.</p>
+      </footer>
+    );
+}
+// styles/globals.css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+  body { margin: 0;
+}
