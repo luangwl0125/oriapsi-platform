@@ -7,9 +7,7 @@ class Settings(BaseSettings):
 
     model_config = {
         "env_file": ".env",
-        # Substituir orm_mode por from_attributes em Pydantic v2
         "from_attributes": True,
     }
 
 settings = Settings()
-```
